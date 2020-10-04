@@ -1,0 +1,57 @@
+.calc_bttns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+      "digits digits digits operations"
+      "digits digits digits operations"
+      "digits digits digits operations"
+      "digits digits digits operations";
+    grid-area: calc_bttns;
+    background-color: #979797;
+  }
+  .digits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . .";
+    grid-area: digits;  
+  }
+  .zero {grid-column: span 3;}
+  .operations {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+      "."
+      "."
+      "."
+      ".";
+    grid-area: operations;
+  }
+
+  .digits>div{
+      background-color: #D8D8D8;
+      padding: 10px 20px;
+      text-align: center;
+      cursor: pointer;
+  }
+
+  .operations>div{
+      background-color: #B15E5E;
+      padding: 10px 20px;
+      text-align: center;
+      cursor: pointer;
+  }
+
+  .disabled{
+      cursor: wait !important;
+      color: #696969;
+  }

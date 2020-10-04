@@ -1,0 +1,21 @@
+.calc_display{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    gap: 1px 1px;
+    grid-template-areas:
+      "top_row"
+      "bottom_row";
+    grid-area: calc_display;
+    text-align: right;
+    padding: 15px;
+    color: white;
+}
+
+.top_row {
+    grid-area: top_row;
+}
+
+.bottom_row {
+    grid-area: bottom_row;
+}
