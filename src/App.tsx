@@ -33,9 +33,9 @@ export default class App extends Vue {
 
   get bttmRow(): string {
     var res = this.store.result;
-    res = res.length > 0 ? '=' + res : '';
-    if (res.length > 12) res = res.slice(res.length - 12);
-    return res;
+    var strRes = res ? '=' + res.toString() : '';
+    if (strRes.length > 12) strRes = strRes.slice(strRes.length - 12);
+    return strRes;
   }
 
   render() {

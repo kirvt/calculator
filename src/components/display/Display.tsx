@@ -20,12 +20,11 @@ export default class Display extends VueComponent<Props> {
 
     public store: MyStore = useStore(this.$store);
 
-
     render() {
         return (
             <div class={styles.calc_display}>
-                <div class={styles.top_row}>{this.topRow}</div>
-                <div class={styles.bottom_row}><span>&nbsp;</span>{this.bttmRow}</div>
+                <p class={styles.top_row}>{this.topRow}</p>
+                <p class={styles.bottom_row}>{this.bttmRow}</p>
             </div>
         )
     }

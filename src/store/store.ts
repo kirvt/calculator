@@ -12,8 +12,6 @@ export class MyStore {
     this.currentInput = val;
   }
 
-  
-
   @Action()
   public async actionUpdateInput(val: string) {
     var newVal = this.currentInput.map((x) => x);
@@ -30,10 +28,13 @@ export class MyStore {
     }
     else {
       if (val === '=') {
-        if (this.is_numeric(this.result)) {
+        if (this.result) {
           this.processing = true;
           newVal = [Number(this.result)];
-          await this.Calc().then(r => { this.setInput(newVal); this.processing = false });
+          await this.Calc().then(r => {
+            this.setInput(newVal);
+            this.processing = false
+          });
         }
       }
       else if (val === 'C') {
@@ -50,7 +51,7 @@ export class MyStore {
   }
 
   @Getter()
-  public get result(): string {
+  public get result(): number | null {
     var vals = this.currentInput;
     if (vals.length > 2) {
       var res = 0;
@@ -70,9 +71,9 @@ export class MyStore {
         }
       }
 
-      return res.toString();
+      return res;
     }
-    return '';
+    return null;
   }
 
   private async Calc() {

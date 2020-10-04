@@ -12,6 +12,16 @@
     color: white;
 }
 
+.calc_display p{
+    padding: 2px 0;
+    margin: 0;
+}
+
+.calc_display p:empty:before {
+    content: ' ';
+    white-space: pre;
+  }
+
 .top_row {
     grid-area: top_row;
 }
